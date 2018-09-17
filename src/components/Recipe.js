@@ -8,7 +8,7 @@ export default class Recipe extends Component {
   render() {
     const { recipe } = this.props
     return (
-      <div>
+      <div data-test-id="Recipe-card">
         <h1>{recipe.RezeptName}</h1>
         <h2>
           {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten
@@ -19,6 +19,7 @@ export default class Recipe extends Component {
             <li key={i}>{zutat}</li>
           ))}
         </ul>
+        <small>1 Portion</small>
         <div>{recipe.Zubereitung}</div>
       </div>
     )

@@ -3,23 +3,35 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
 
-import { Button, Welcome } from '@storybook/react/demo'
+import Recipe from '../components/Recipe'
 
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
-))
-
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+storiesOf('Recipe', module)
+  .add('show one recipe', () => (
+    <Recipe
+      recipe={{
+        RezeptName: 'Rezept 19',
+        SchwierigkeitsgradName: 'normal',
+        Minuten: 60,
+        Zutaten: '250g Nudeln, 1 Ei(er)',
+        Zubereitung: '1. Tu dies 2. Tu das',
+      }}
+    />
   ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ))
+  .add(
+    'show recipe with many ingredients and long title & instructions',
+    () => (
+        <Recipe
+          recipe={{
+            RezeptName:
+              'Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem',
+            SchwierigkeitsgradName: 'normal',
+            Minuten: 60,
+            Zutaten:
+              '250g Nudeln, 1 Ei(er), 20 Tomaten, 300ml Milch, 250g Nudeln, 1 Ei(er), 20 Tomaten, 300ml Milch, 250g Nudeln, 1 Ei(er), 20 Tomaten, 300ml Milch',
+            Zubereitung:
+              '1. Tu dies 2. Tu das Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem 1. Tu dies 2. Tu das Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem 1. Tu dies 2. Tu das Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem Lorem ipsum dolor sit amet gloribus omnibus glorem fratatem',
+          }}
+        />
+    )
+  )
