@@ -1,0 +1,20 @@
+{
+  "recipes": [
+    {
+      "RezeptID": 1,
+      "RezeptName": "Rezept 1",
+      "SchwierigkeitsgradName": "normal",
+      "Minuten": 60,
+      "Zutaten": "250g Nudeln, 1 Ei(er)",
+      "Zubereitung": "1. Tu dies 2. Tu das"
+    },
+    {
+      "RezeptID": 2,
+      "RezeptName": "Rezept 2",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": "1. Tu dies 2. Tu das 3. Tu jenes"
+    }
+  ]
+}
