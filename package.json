@@ -16,7 +16,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint {src/,src/**/,cypress/integration/}*.js",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "cypress": "cypress open"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.10",
