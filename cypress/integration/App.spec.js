@@ -1,4 +1,6 @@
-/* global cy */
+/* global cy, require */
+
+var expect = require('chai').expect
 
 describe('App', () => {
   beforeEach(() => {
@@ -28,10 +30,9 @@ describe('App', () => {
       .should('exist')
       .click({ multiple: true })
 
-    cy.expect('[data-test-id="Recipe-card-toggle"]').to.not.contain(
+    expect('[data-test-id="Recipe-card-toggle"]').to.not.contain(
       '[data-test-id="Recipe-card-toggled-content"]'
     )
-    //.contains('[data-test-id="Recipe-card-toggled-content"]')
   })
 })
 
