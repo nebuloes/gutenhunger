@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import arrow from '../arrow.png'
 
+const StyledH1 = styled.h1`
+  display: inline;
+`
 const StyledImg = styled.img`
   transform: rotate(90deg);
 `
@@ -24,6 +27,7 @@ export default class Recipe extends Component {
   }
 
   renderShortOrLongRecipeCard() {
+    const { recipe } = this.props
     return this.state.hidden ? (
       <img src={arrow} alt="" width="30px" onClick={this.toggleContent} />
     ) : (
@@ -34,7 +38,16 @@ export default class Recipe extends Component {
           width="30px"
           onClick={this.toggleContent}
         />
-        <div>Test Test</div>
+        <h2>
+          {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten
+        </h2>
+        <h3>Zutaten</h3>
+        <ul>
+          {recipe.Zutaten.split(',').map((zutat, i) => (
+            <li key={i}>{zutat}</li>
+          ))}
+        </ul>
+        <Link to={'/recipe/' + recipe.RezeptID}>zum Rezept</Link>
       </React.Fragment>
     )
   }
@@ -44,7 +57,7 @@ export default class Recipe extends Component {
     return (
       <div data-test-id="Recipe-card">
         <Link to={'/recipe/' + recipe.RezeptID}>
-          <h1>{recipe.RezeptName}</h1>
+          <StyledH1>{recipe.RezeptName}</StyledH1>
         </Link>
         {this.renderShortOrLongRecipeCard()}
       </div>
