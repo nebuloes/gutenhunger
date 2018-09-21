@@ -7,9 +7,15 @@ import Recipe from './Recipe'
 class App extends Component {
   renderRecipeCards = () => {
     return recipes.map(recipe => (
-      <RecipeCard key={recipe.RezeptID} recipe={recipe} />
+      <RecipeCard
+        key={recipe.RezeptID}
+        recipe={recipe}
+        onToggle={this.toggleDetails}
+      />
     ))
   }
+
+  toggleDetails = () => {}
 
   renderRecipe = ({ match }) => {
     const recipeID = Number(match.params.id)
