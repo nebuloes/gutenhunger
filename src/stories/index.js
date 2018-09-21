@@ -4,19 +4,23 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
+import { BrowserRouter as Router } from 'react-router-dom'
+
 import RecipeCard from '../components/RecipeCard'
 import Recipe from '../components/Recipe'
 
 storiesOf('RecipeCard', module).add('shows recipe title', () => (
-  <RecipeCard
-    recipe={{
-      RezeptName: 'Rezept 19',
-      SchwierigkeitsgradName: 'normal',
-      Minuten: 60,
-      Zutaten: '250g Nudeln, 1 Ei(er)',
-      Zubereitung: '1. Tu dies 2. Tu das',
-    }}
-  />
+  <Router>
+    <RecipeCard
+      recipe={{
+        RezeptName: 'Rezept 19',
+        SchwierigkeitsgradName: 'normal',
+        Minuten: 60,
+        Zutaten: '250g Nudeln, 1 Ei(er)',
+        Zubereitung: '1. Tu dies 2. Tu das',
+      }}
+    />
+  </Router>
 ))
 storiesOf('Recipe', module)
   .add('shows complete recipe', () => (
