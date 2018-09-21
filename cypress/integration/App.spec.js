@@ -8,6 +8,31 @@ describe('App', () => {
   it('shows recipe titles from json', () => {
     cy.get('[data-test-id="Recipe-card"]').should('exist')
   })
+
+  it('toggles recipe content on click', () => {
+    cy.get('[data-test-id="Recipe-card-toggle"]')
+      .should('exist')
+      .click({ multiple: true })
+
+    cy.get('[data-test-id="Recipe-card-toggled-content"]').should('exist')
+  })
+
+  it('hides content again on second click', () => {
+    cy.get('[data-test-id="Recipe-card-toggle"]')
+      .should('exist')
+      .click({ multiple: true })
+
+    cy.get('[data-test-id="Recipe-card-toggled-content"]').should('exist')
+
+    cy.get('[data-test-id="Recipe-card-toggle"]')
+      .should('exist')
+      .click({ multiple: true })
+
+    cy.expect('[data-test-id="Recipe-card-toggle"]').to.not.contain(
+      '[data-test-id="Recipe-card-toggled-content"]'
+    )
+    //.contains('[data-test-id="Recipe-card-toggled-content"]')
+  })
 })
 
 describe('single recipe page', () => {

@@ -30,25 +30,34 @@ export default class Recipe extends Component {
   renderShortOrLongRecipeCard() {
     const { recipe } = this.props
     return this.state.hidden ? (
-      <img src={arrow} alt="" width="30px" onClick={this.toggleContent} />
+      <img
+        data-test-id="Recipe-card-toggle"
+        src={arrow}
+        alt=""
+        width="30px"
+        onClick={this.toggleContent}
+      />
     ) : (
       <React.Fragment>
         <StyledImg
+          data-test-id="Recipe-card-toggle"
           src={arrow}
           alt=""
           width="30px"
           onClick={this.toggleContent}
         />
-        <h2>
-          {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten
-        </h2>
-        <h3>Zutaten</h3>
-        <ul>
-          {recipe.Zutaten.split(',').map((zutat, i) => (
-            <li key={i}>{zutat}</li>
-          ))}
-        </ul>
-        <Link to={'/recipe/' + recipe.RezeptID}>zum Rezept</Link>
+        <section data-test-id="Recipe-card-toggled-content">
+          <h2>
+            {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten
+          </h2>
+          <h3>Zutaten</h3>
+          <ul>
+            {recipe.Zutaten.split(',').map((zutat, i) => (
+              <li key={i}>{zutat}</li>
+            ))}
+          </ul>
+          <Link to={'/recipe/' + recipe.RezeptID}>zum Rezept</Link>
+        </section>
       </React.Fragment>
     )
   }
