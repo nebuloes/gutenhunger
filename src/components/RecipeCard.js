@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 import arrow from '../arrow.png'
+import Heart from './Heart'
 
 const StyledH1 = styled.h1`
   display: inline;
@@ -15,6 +16,7 @@ const StyledImg = styled.img`
 export default class Recipe extends Component {
   static propTypes = {
     recipe: PropTypes.object.isRequired,
+    onClick: PropTypes.func,
   }
 
   state = {
@@ -28,7 +30,7 @@ export default class Recipe extends Component {
   }
 
   renderShortOrLongRecipeCard() {
-    const { recipe } = this.props
+    const { recipe, onClick } = this.props
     return this.state.hidden ? (
       <img
         data-test-id="Recipe-card-toggle"
@@ -48,7 +50,8 @@ export default class Recipe extends Component {
         />
         <section data-test-id="Recipe-card-toggled-content">
           <h2>
-            {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten
+            {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
+            <Heart onClick={onClick} />
           </h2>
           <h3>Zutaten</h3>
           <ul>
