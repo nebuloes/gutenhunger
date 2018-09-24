@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
+import { applyMiddleware, createStore } from 'redux'
+import reducer from '../reducer'
+import { saveToLocalStorage } from '../middlewares'
 import { recipes } from '../recipes.json'
+import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import RecipeCard from './RecipeCard'
 import Recipe from './Recipe'
+
+const store = createStore(reducer, applyMiddleware(saveToLocalStorage))
 
 class App extends Component {
   renderRecipeCards = () => {
@@ -19,12 +25,14 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Route exact path="/" render={this.renderRecipeCards} />
-          <Route path="/recipe/:id" render={this.renderRecipe} />
-        </div>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Route exact path="/" render={this.renderRecipeCards} />
+            <Route path="/recipe/:id" render={this.renderRecipe} />
+          </div>
+        </Router>
+      </Provider>
     )
   }
 }

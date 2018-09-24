@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 import arrow from '../arrow.png'
+import heart from '../heart.png'
+import heartFill from '../heart-fill.png'
 import Heart from './Heart'
 
 const StyledH1 = styled.h1`
@@ -17,6 +19,7 @@ export default class Recipe extends Component {
   static propTypes = {
     recipe: PropTypes.object.isRequired,
     onClick: PropTypes.func,
+    likedRecipes: PropTypes.any,
   }
 
   state = {
@@ -62,6 +65,31 @@ export default class Recipe extends Component {
           <Link to={'/recipe/' + recipe.RezeptID}>zum Rezept</Link>
         </section>
       </React.Fragment>
+    )
+  }
+
+  //{this.renderEmptyOrFullHeart()}
+
+  renderEmptyOrFullHeart() {
+    const foundRecipe = this.props.likedRecipes.find(
+      recipe => this.props.likedRecipes === recipe.RezeptID
+    )
+    return foundRecipe ? (
+      <img
+        data-test-id="Recipe-card-toggle"
+        src={heartFill}
+        alt=""
+        width="30px"
+        onClick={this.toggleContent}
+      />
+    ) : (
+      <Heart
+        data-test-id="Recipe-card-toggle"
+        src={heart}
+        alt=""
+        width="30px"
+        onClick={this.toggleContent}
+      />
     )
   }
 
