@@ -8,9 +8,9 @@ export default class Heart extends Component {
   static propTypes = {
     recipe: PropTypes.object.isRequired,
     onClick: PropTypes.func,
-    likedRecipes: PropTypes.any,
-    onSave: PropTypes.any,
-    onUnsave: PropTypes.any,
+    onSave: PropTypes.func,
+    onUnsave: PropTypes.func,
+    likedRecipes: PropTypes.array,
   }
 
   renderEmptyOrFullHeart() {
@@ -18,7 +18,7 @@ export default class Heart extends Component {
     const foundRecipe = likedRecipes.includes(recipe.RezeptID)
     return foundRecipe ? (
       <img
-        data-test-id="Recipe-card-toggle"
+        data-test-id="Recipe-saved"
         src={heartFilled}
         alt=""
         width="30px"
@@ -26,7 +26,7 @@ export default class Heart extends Component {
       />
     ) : (
       <img
-        data-test-id="Recipe-card-toggle"
+        data-test-id="Recipe-not-saved"
         src={heart}
         alt=""
         width="30px"
@@ -39,4 +39,3 @@ export default class Heart extends Component {
     return <React.Fragment>{this.renderEmptyOrFullHeart()}</React.Fragment>
   }
 }
-//<React.Fragment>{this.renderEmptyOrFullHeart()}</React.Fragment>

@@ -1,6 +1,4 @@
-/* global cy, require */
-
-var expect = require('chai').expect
+/* global cy */
 
 describe('App', () => {
   beforeEach(() => {
@@ -30,9 +28,18 @@ describe('App', () => {
       .should('exist')
       .click({ multiple: true })
 
-    expect('[data-test-id="Recipe-card-toggle"]').to.not.contain(
-      '[data-test-id="Recipe-card-toggled-content"]'
-    )
+    cy.get('[data-test-id="Recipe-card-toggled-content"]').should('not.exist')
+  })
+
+  it('toggles save when clicking on heart', () => {
+    cy.get('[data-test-id="Recipe-card-toggle"]')
+      .should('exist')
+      .click({ multiple: true })
+
+    cy.get('[data-test-id="Recipe-not-saved"]')
+      .should('exist')
+      .click({ multiple: true })
+    cy.get('[data-test-id="Recipe-saved"]').should('exist')
   })
 })
 
@@ -44,10 +51,27 @@ describe('single recipe page', () => {
       .should('exist')
       .click()
 
-    cy.url().should('eq', 'http://localhost:3000/recipe/27')
+    cy.url().should('eq', 'http://localhost:3000/recipe/17')
   })
 
   it('shows complete recipe from json', () => {
     cy.get('[data-test-id="Recipe-complete"]').should('exist')
+  })
+
+  it('toggles save when clicking on heart', () => {
+    cy.get('[data-test-id="Recipe-not-saved"]')
+      .should('exist')
+      .click()
+    cy.get('[data-test-id="Recipe-saved"]').should('exist')
+  })
+
+  it('removes like again on second click on heart', () => {
+    cy.get('[data-test-id="Recipe-not-saved"]')
+      .should('exist')
+      .click()
+    cy.get('[data-test-id="Recipe-saved"]')
+      .should('exist')
+      .click()
+    cy.get('[data-test-id="Recipe-not-saved"]').should('exist')
   })
 })

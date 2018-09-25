@@ -5,7 +5,6 @@ import { saveToLocalStorage } from '../middlewares'
 import { recipes } from '../recipes.json'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-//import RecipeCard from './RecipeCard'
 import RecipeContainer from '../containers/RecipeContainer'
 import RecipeCardContainer from '../containers/RecipeCardContainer'
 
