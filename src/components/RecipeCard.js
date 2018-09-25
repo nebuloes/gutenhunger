@@ -34,6 +34,7 @@ export default class Recipe extends Component {
   renderShortOrLongRecipeCard() {
     const { recipe, onSave, onUnsave, likedRecipes } = this.props
     const RezeptID = recipe.RezeptID
+    const recipeIndex = likedRecipes.findIndex(recipe => recipe === RezeptID)
     return this.state.hidden ? (
       <img
         data-test-id="Recipe-card-toggle"
@@ -56,7 +57,7 @@ export default class Recipe extends Component {
             {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
             <Heart
               onSave={() => onSave(RezeptID)}
-              onUnsave={onUnsave}
+              onUnsave={() => onUnsave(recipeIndex)}
               likedRecipes={likedRecipes}
             />
           </h2>

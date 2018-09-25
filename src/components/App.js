@@ -9,7 +9,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Recipe from './Recipe'
 import RecipeCardContainer from '../containers/RecipeCardContainer'
 
-const store = createStore(reducer, applyMiddleware(saveToLocalStorage))
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(saveToLocalStorage)
+)
 
 class App extends Component {
   renderRecipeCards = () => {

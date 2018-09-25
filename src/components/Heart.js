@@ -12,8 +12,6 @@ export default class Heart extends Component {
     onUnsave: PropTypes.any,
   }
 
-  //{this.renderEmptyOrFullHeart()}
-
   renderEmptyOrFullHeart() {
     const { onSave, onUnsave, likedRecipes } = this.props
     const foundRecipe = likedRecipes.find(
@@ -39,7 +37,15 @@ export default class Heart extends Component {
   }
 
   render() {
-    return <React.Fragment>{this.renderEmptyOrFullHeart()}</React.Fragment>
+    return (
+      <img
+        data-test-id="Recipe-card-toggle"
+        src={heartFilled}
+        alt=""
+        width="30px"
+        onClick={this.props.onUnsave}
+      />
+    )
   }
 }
 //<React.Fragment>{this.renderEmptyOrFullHeart()}</React.Fragment>

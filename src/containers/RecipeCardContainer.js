@@ -10,8 +10,8 @@ const mapDispatchToProps = dispatch => ({
   onSave: RezeptID => {
     dispatch(saveRecipe({ RezeptID }))
   },
-  onUnsave: index => {
-    dispatch(removeRecipe({ index }))
+  onUnsave: recipeIndex => {
+    dispatch(removeRecipe({ recipeIndex }))
   },
 })
 
