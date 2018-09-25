@@ -6,7 +6,7 @@ import { recipes } from '../recipes.json'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 //import RecipeCard from './RecipeCard'
-import Recipe from './Recipe'
+import RecipeContainer from '../containers/RecipeContainer'
 import RecipeCardContainer from '../containers/RecipeCardContainer'
 
 const store = createStore(
@@ -25,7 +25,7 @@ class App extends Component {
   renderRecipe = ({ match }) => {
     const recipeID = Number(match.params.id)
     const foundRecipe = recipes.find(recipe => recipe.RezeptID === recipeID)
-    return <Recipe recipe={foundRecipe} />
+    return <RecipeContainer recipe={foundRecipe} />
   }
 
   render() {

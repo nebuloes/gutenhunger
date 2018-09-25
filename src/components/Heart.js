@@ -6,6 +6,7 @@ import heartFilled from '../heart-fill.png'
 
 export default class Heart extends Component {
   static propTypes = {
+    recipe: PropTypes.object.isRequired,
     onClick: PropTypes.func,
     likedRecipes: PropTypes.any,
     onSave: PropTypes.any,
@@ -13,10 +14,8 @@ export default class Heart extends Component {
   }
 
   renderEmptyOrFullHeart() {
-    const { onSave, onUnsave, likedRecipes } = this.props
-    const foundRecipe = likedRecipes.find(
-      recipe => likedRecipes === recipe.RezeptID
-    )
+    const { onSave, onUnsave, likedRecipes, recipe } = this.props
+    const foundRecipe = likedRecipes.includes(recipe.RezeptID)
     return foundRecipe ? (
       <img
         data-test-id="Recipe-card-toggle"
@@ -37,15 +36,7 @@ export default class Heart extends Component {
   }
 
   render() {
-    return (
-      <img
-        data-test-id="Recipe-card-toggle"
-        src={heartFilled}
-        alt=""
-        width="30px"
-        onClick={this.props.onUnsave}
-      />
-    )
+    return <React.Fragment>{this.renderEmptyOrFullHeart()}</React.Fragment>
   }
 }
 //<React.Fragment>{this.renderEmptyOrFullHeart()}</React.Fragment>

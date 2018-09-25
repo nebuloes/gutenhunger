@@ -16,9 +16,9 @@ const StyledImg = styled.img`
 export default class Recipe extends Component {
   static propTypes = {
     recipe: PropTypes.object.isRequired,
-    onSave: PropTypes.any,
-    onUnsave: PropTypes.any,
-    likedRecipes: PropTypes.any,
+    onSave: PropTypes.func,
+    onUnsave: PropTypes.func,
+    likedRecipes: PropTypes.array,
   }
 
   state = {
@@ -56,6 +56,7 @@ export default class Recipe extends Component {
           <h2>
             {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
             <Heart
+              recipe={recipe}
               onSave={() => onSave(RezeptID)}
               onUnsave={() => onUnsave(recipeIndex)}
               likedRecipes={likedRecipes}
