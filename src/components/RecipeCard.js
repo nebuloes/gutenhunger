@@ -4,8 +4,6 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 import arrow from '../arrow.png'
-import heart from '../heart.png'
-import heartFill from '../heart-fill.png'
 import Heart from './Heart'
 
 const StyledH1 = styled.h1`
@@ -18,7 +16,8 @@ const StyledImg = styled.img`
 export default class Recipe extends Component {
   static propTypes = {
     recipe: PropTypes.object.isRequired,
-    onClick: PropTypes.func,
+    onSave: PropTypes.any,
+    onUnsave: PropTypes.any,
     likedRecipes: PropTypes.any,
   }
 
@@ -33,7 +32,8 @@ export default class Recipe extends Component {
   }
 
   renderShortOrLongRecipeCard() {
-    const { recipe, onClick } = this.props
+    const { recipe, onSave, onUnsave, likedRecipes } = this.props
+    const RezeptID = recipe.RezeptID
     return this.state.hidden ? (
       <img
         data-test-id="Recipe-card-toggle"
@@ -54,7 +54,11 @@ export default class Recipe extends Component {
         <section data-test-id="Recipe-card-toggled-content">
           <h2>
             {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
-            <Heart onClick={onClick} />
+            <Heart
+              onSave={() => onSave(RezeptID)}
+              onUnsave={onUnsave}
+              likedRecipes={likedRecipes}
+            />
           </h2>
           <h3>Zutaten</h3>
           <ul>
@@ -65,31 +69,6 @@ export default class Recipe extends Component {
           <Link to={'/recipe/' + recipe.RezeptID}>zum Rezept</Link>
         </section>
       </React.Fragment>
-    )
-  }
-
-  //{this.renderEmptyOrFullHeart()}
-
-  renderEmptyOrFullHeart() {
-    const foundRecipe = this.props.likedRecipes.find(
-      recipe => this.props.likedRecipes === recipe.RezeptID
-    )
-    return foundRecipe ? (
-      <img
-        data-test-id="Recipe-card-toggle"
-        src={heartFill}
-        alt=""
-        width="30px"
-        onClick={this.toggleContent}
-      />
-    ) : (
-      <Heart
-        data-test-id="Recipe-card-toggle"
-        src={heart}
-        alt=""
-        width="30px"
-        onClick={this.toggleContent}
-      />
     )
   }
 

@@ -1,22 +1,18 @@
 import { connect } from 'react-redux'
-import { startGame, continueGame, postNewGame, fetchGames } from '../actions'
+import { saveRecipe, removeRecipe } from '../actions'
 import RecipeCard from '../components/RecipeCard'
 
 const mapStateToProps = state => ({
-  games: state.games,
+  likedRecipes: state.likedRecipes,
 })
 
 const mapDispatchToProps = dispatch => ({
-  onStartGame: () => {
-    dispatch(startGame())
+  onSave: RezeptID => {
+    dispatch(saveRecipe({ RezeptID }))
   },
-  onContinueGame: index => {
-    dispatch(continueGame({ index }))
+  onUnsave: index => {
+    dispatch(removeRecipe({ index }))
   },
-  onFetchGames: () => {
-    dispatch(fetchGames())
-  },
-  onCreateGame: title => dispatch(postNewGame(title)),
 })
 
 export default connect(

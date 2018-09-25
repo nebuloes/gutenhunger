@@ -5,15 +5,16 @@ import { saveToLocalStorage } from '../middlewares'
 import { recipes } from '../recipes.json'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import RecipeCard from './RecipeCard'
+//import RecipeCard from './RecipeCard'
 import Recipe from './Recipe'
+import RecipeCardContainer from '../containers/RecipeCardContainer'
 
 const store = createStore(reducer, applyMiddleware(saveToLocalStorage))
 
 class App extends Component {
   renderRecipeCards = () => {
     return recipes.map(recipe => (
-      <RecipeCard key={recipe.RezeptID} recipe={recipe} />
+      <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
     ))
   }
 
