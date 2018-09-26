@@ -5,6 +5,8 @@ export default class FridgeContent extends Component {
   static propTypes = {
     onSubmit: PropTypes.func,
     fridgeContent: PropTypes.array,
+    onEdit: PropTypes.func,
+    onDelete: PropTypes.func,
   }
 
   state = {
@@ -27,6 +29,7 @@ export default class FridgeContent extends Component {
   }
 
   render() {
+    const { fridgeContent, onEdit, onDelete } = this.props
     return (
       <div>
         <input
@@ -39,11 +42,11 @@ export default class FridgeContent extends Component {
           type="text"
         />
         <ul>
-          {this.props.fridgeContent.map((item, index) => (
+          {fridgeContent.map((item, index) => (
             <li data-test-id="Fridge-item" key={index}>
               {item}
-              <span>&#9998;</span>
-              <span>&times;</span>
+              <span onClick={onEdit}>&#9998;</span>
+              <span onClick={() => onDelete(index)}>&times;</span>
             </li>
           ))}
         </ul>

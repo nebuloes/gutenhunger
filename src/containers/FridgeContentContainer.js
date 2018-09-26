@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { addFridgeitem } from '../actions'
+import { addFridgeitem, deleteFridgeitem } from '../actions'
 import FridgeContent from '../components/FridgeContent'
 
 const mapStateToProps = state => ({
@@ -9,6 +9,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onSubmit: inputValue => {
     dispatch(addFridgeitem({ inputValue }))
+  },
+  onDelete: index => {
+    dispatch(deleteFridgeitem({ index }))
   },
 })
 
