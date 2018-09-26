@@ -5,8 +5,11 @@ import { saveToLocalStorage } from '../middlewares'
 import { recipes } from '../recipes.json'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 import RecipeContainer from '../containers/RecipeContainer'
 import RecipeCardContainer from '../containers/RecipeCardContainer'
+import FridgeContentContainer from '../containers/FridgeContentContainer'
 
 const store = createStore(
   reducer,
@@ -16,15 +19,24 @@ const store = createStore(
 
 class App extends Component {
   renderRecipeCards = () => {
-    return recipes.map(recipe => (
-      <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
-    ))
+    return (
+      <React.Fragment>
+        {recipes.map(recipe => (
+          <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
+        ))}
+        <Link to="/fridge">Go to fridge</Link>
+      </React.Fragment>
+    )
   }
 
   renderRecipe = ({ match }) => {
     const recipeID = Number(match.params.id)
     const foundRecipe = recipes.find(recipe => recipe.RezeptID === recipeID)
     return <RecipeContainer recipe={foundRecipe} />
+  }
+
+  renderFridgeContent = () => {
+    return <FridgeContentContainer />
   }
 
   render() {
@@ -34,6 +46,7 @@ class App extends Component {
           <div className="App">
             <Route exact path="/" render={this.renderRecipeCards} />
             <Route path="/recipe/:id" render={this.renderRecipe} />
+            <Route path="/fridge" component={FridgeContentContainer} />
           </div>
         </Router>
       </Provider>

@@ -3,6 +3,7 @@ import { load } from './services'
 
 const initialState = load('app') || {
   likedRecipes: [],
+  fridgeContent: [],
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -22,6 +23,13 @@ export default function reducer(state = initialState, action = {}) {
         ...state.likedRecipes.slice(action.payload.recipeIndex + 1),
       ],
     }
+
+  case ACTIONS.ADD_FRIDGEITEM:
+    return {
+      ...state,
+      fridgeContent: [...state.fridgeContent, action.payload.inputValue],
+    }
+
   default:
     return state
   }

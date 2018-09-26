@@ -34,4 +34,40 @@ describe('reducer', () => {
       })
     })
   })
+
+  describe(ACTIONS.ADD_FRIDGEITEM, () => {
+    it('adds value from input to fridgeContent array', () => {
+      const state = {
+        likedRecipes: [12, 21, 13, 47],
+        fridgeContent: [],
+      }
+      const action = {
+        type: ACTIONS.ADD_FRIDGEITEM,
+        payload: {
+          inputValue: 'Banane',
+        },
+      }
+
+      expect(reducer(state, action)).toEqual({
+        likedRecipes: [12, 21, 13, 47],
+        fridgeContent: ['Banane'],
+      })
+    })
+
+    it('adds value from input to fridgeContent array and keeps existing strings in array', () => {
+      const state = {
+        fridgeContent: ['Banane', 'Salat', 'Käse'],
+      }
+      const action = {
+        type: ACTIONS.ADD_FRIDGEITEM,
+        payload: {
+          inputValue: 'Milchschnitte',
+        },
+      }
+
+      expect(reducer(state, action)).toEqual({
+        fridgeContent: ['Banane', 'Salat', 'Käse', 'Milchschnitte'],
+      })
+    })
+  })
 })

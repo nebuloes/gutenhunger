@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import RecipeCard from '../components/RecipeCard'
 import Recipe from '../components/Recipe'
 import Heart from '../components/Heart'
+import FridgeContent from '../components/FridgeContent'
 
 storiesOf('RecipeCard', module).add(
   'shows recipe title, toggles on click',
@@ -76,4 +77,9 @@ storiesOf('Heart', module)
       }}
       likedRecipes={[12]}
     />
+  ))
+storiesOf('Fridge', module)
+  .add('Fridge with no items added', () => <FridgeContent fridgeContent={[]} />)
+  .add('Fridge with some items added', () => (
+    <FridgeContent fridgeContent={['Joghurt', 'Brokkoli', 'Butter']} />
   ))
