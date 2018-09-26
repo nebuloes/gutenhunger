@@ -30,6 +30,7 @@ export default class FridgeContent extends Component {
     return (
       <div>
         <input
+          data-test-id="Fridge-input"
           onChange={this.updateInputValue}
           onKeyUp={this.checkForEnterButton}
           placeholder="Enter Item"
@@ -39,7 +40,9 @@ export default class FridgeContent extends Component {
         />
         <ul>
           {this.props.fridgeContent.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li data-test-id="Fridge-item" key={index}>
+              {item}
+            </li>
           ))}
         </ul>
       </div>

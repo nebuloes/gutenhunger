@@ -24,7 +24,9 @@ class App extends Component {
         {recipes.map(recipe => (
           <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
         ))}
-        <Link to="/fridge">Go to fridge</Link>
+        <Link data-test-id="Link-to-fridge" to="/fridge">
+          Go to fridge
+        </Link>
       </React.Fragment>
     )
   }

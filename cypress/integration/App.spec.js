@@ -75,3 +75,30 @@ describe('single recipe page', () => {
     cy.get('[data-test-id="Recipe-not-saved"]').should('exist')
   })
 })
+
+describe('fridge page', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+    cy.get('[data-test-id="Link-to-fridge"]')
+      .should('exist')
+      .click()
+
+    cy.url().should('eq', 'http://localhost:3000/fridge')
+  })
+
+  it('shows input field and no items yet', () => {
+    cy.get('[data-test-id="Fridge-input"]').should('exist')
+    cy.get('[data-test-id="Fridge-item"]').should('not.exist')
+  })
+
+  it('adds entered items to list', () => {
+    cy.get('[data-test-id="Fridge-input"]')
+      .should('exist')
+      .type('Camembert{Enter}')
+      .type('Gorgonzola{Enter}')
+      .type('Gouda{Enter}')
+      .type('Tilsiter{Enter}')
+      .type('Amsterdamer{Enter}')
+    cy.get('[data-test-id="Fridge-item"]').should('exist')
+  })
+})
