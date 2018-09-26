@@ -6,7 +6,6 @@ export default class FridgeItem extends Component {
     fridgeItem: PropTypes.string,
     onEdit: PropTypes.func,
     onDelete: PropTypes.func,
-    inputValue: PropTypes.string,
   }
 
   state = {

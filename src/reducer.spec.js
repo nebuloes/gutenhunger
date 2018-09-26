@@ -70,4 +70,41 @@ describe('reducer', () => {
       })
     })
   })
+
+  describe(ACTIONS.DELETE_FRIDGEITEM, () => {
+    it('deletes certain item from fridgeContent array', () => {
+      const state = {
+        fridgeContent: ['Banane', 'Salat', 'Käse', 'Milchschnitte'],
+      }
+      const action = {
+        type: ACTIONS.DELETE_FRIDGEITEM,
+        payload: {
+          index: 1,
+        },
+      }
+
+      expect(reducer(state, action)).toEqual({
+        fridgeContent: ['Banane', 'Käse', 'Milchschnitte'],
+      })
+    })
+  })
+
+  describe(ACTIONS.EDIT_FRIDGEITEM, () => {
+    it('edits certain item from fridgeContent array and updates string', () => {
+      const state = {
+        fridgeContent: ['Banane', 'Salat', 'Käse', 'Milchschnitte'],
+      }
+      const action = {
+        type: ACTIONS.EDIT_FRIDGEITEM,
+        payload: {
+          index: 2,
+          inputValue: 'Kääääse',
+        },
+      }
+
+      expect(reducer(state, action)).toEqual({
+        fridgeContent: ['Banane', 'Salat', 'Kääääse', 'Milchschnitte'],
+      })
+    })
+  })
 })
