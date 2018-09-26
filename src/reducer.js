@@ -40,6 +40,16 @@ export default function reducer(state = initialState, action = {}) {
       ],
     }
 
+  case ACTIONS.EDIT_FRIDGEITEM:
+    return {
+      ...state,
+      fridgeContent: [
+        ...state.fridgeContent.slice(0, action.payload.index),
+        action.payload.inputValue,
+        ...state.fridgeContent.slice(action.payload.index + 1),
+      ],
+    }
+
   default:
     return state
   }

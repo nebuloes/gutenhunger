@@ -47,7 +47,7 @@ export default class FridgeContent extends Component {
           {fridgeContent.map((item, index) => (
             <FridgeItem
               key={index}
-              onEdit={onEdit}
+              onEdit={inputValue => onEdit(inputValue, index)}
               onDelete={() => onDelete(index)}
               fridgeItem={item}
             />
