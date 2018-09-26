@@ -42,6 +42,8 @@ export default class FridgeContent extends Component {
           {this.props.fridgeContent.map((item, index) => (
             <li data-test-id="Fridge-item" key={index}>
               {item}
+              <span>&#9998;</span>
+              <span>&times;</span>
             </li>
           ))}
         </ul>
