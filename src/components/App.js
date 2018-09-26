@@ -37,10 +37,6 @@ class App extends Component {
     return <RecipeContainer recipe={foundRecipe} />
   }
 
-  renderFridgeContent = () => {
-    return <FridgeContentContainer />
-  }
-
   render() {
     return (
       <Provider store={store}>
