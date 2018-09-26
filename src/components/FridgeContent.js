@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import FridgeItem from './FridgeItem'
+
 export default class FridgeContent extends Component {
   static propTypes = {
     onSubmit: PropTypes.func,
@@ -43,11 +45,12 @@ export default class FridgeContent extends Component {
         />
         <ul>
           {fridgeContent.map((item, index) => (
-            <li data-test-id="Fridge-item" key={index}>
-              {item}
-              <span onClick={onEdit}>&#9998;</span>
-              <span onClick={() => onDelete(index)}>&times;</span>
-            </li>
+            <FridgeItem
+              key={index}
+              onEdit={onEdit}
+              onDelete={() => onDelete(index)}
+              fridgeItem={item}
+            />
           ))}
         </ul>
       </div>
