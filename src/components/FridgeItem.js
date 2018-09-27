@@ -45,6 +45,7 @@ export default class FridgeItem extends Component {
     return this.state.edit ? (
       <li>
         <input
+          data-test-id="edit-item-input"
           autoFocus
           value={this.state.inputValue}
           onChange={this.updateInputValue}
@@ -56,8 +57,12 @@ export default class FridgeItem extends Component {
     ) : (
       <li data-test-id="Fridge-item">
         {fridgeItem}
-        <span onClick={() => this.editItem()}>&#9998;</span>
-        <span onClick={onDelete}>&times;</span>
+        <span data-test-id="edit-item" onClick={() => this.editItem()}>
+          &#9998;
+        </span>
+        <span data-test-id="delete-item" onClick={onDelete}>
+          &times;
+        </span>
       </li>
     )
   }
