@@ -12,6 +12,7 @@ export default class StartScreen extends Component {
 
   state = {
     inputValue: '',
+    search: false,
   }
 
   updateInputValue = event => {
@@ -24,9 +25,18 @@ export default class StartScreen extends Component {
   checkForEnterButton = event => {
     const { inputValue } = this.state
     if (event.key === 'Enter' && inputValue !== '') {
-      this.props.onSubmit(inputValue)
-      this.setState({ inputValue: '' })
+      this.setState({ search: true })
     }
+  }
+
+  showRecipesOrSearchResult() {
+    return this.state.search ? (
+      <div>test</div>
+    ) : (
+      recipes.map(recipe => (
+        <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
+      ))
+    )
   }
 
   render() {
@@ -37,9 +47,7 @@ export default class StartScreen extends Component {
           onChange={this.updateInputValue}
           onKeyUp={this.checkForEnterButton}
         />
-        {recipes.map(recipe => (
-          <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
-        ))}
+        {this.showRecipesOrSearchResult()}
         <Link data-test-id="Link-to-fridge" to="/fridge">
           Go to fridge
         </Link>
