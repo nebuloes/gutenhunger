@@ -29,14 +29,22 @@ export default class StartScreen extends Component {
     }
   }
 
+  showRecipesFromSearch() {
+    const { inputValue } = this.state
+    const search = recipes.map(recipe => Object.values(recipe))
+    console.log(search)
+    return search.includes(inputValue) ? <div>success</div> : <div>fail</div>
+    // recipes.map(recipe => (
+    //   <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
+    // ))
+  }
+
   showRecipesOrSearchResult() {
-    return this.state.search ? (
-      <div>test</div>
-    ) : (
-      recipes.map(recipe => (
+    return this.state.search
+      ? this.showRecipesFromSearch()
+      : recipes.map(recipe => (
         <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
       ))
-    )
   }
 
   render() {
@@ -55,3 +63,13 @@ export default class StartScreen extends Component {
     )
   }
 }
+
+// const { inputValue } = this.state
+// const foundRecipes = recipes.filter(recipe => recipe.includes(inputValue))
+// this.state.search
+//       ? foundRecipes.map(recipe => (
+//         <RecipeCardContainer key={recipe.RezeptID} recipe={foundRecipes} />
+//       ))
+//       : recipes.map(recipe => (
+//         <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
+//       ))
