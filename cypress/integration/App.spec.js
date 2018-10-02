@@ -41,6 +41,26 @@ describe('App', () => {
       .click({ multiple: true })
     cy.get('[data-test-id="Recipe-saved"]').should('exist')
   })
+
+  it('searches through recipes with input value, only renders whats needed', () => {
+    cy.get('[data-test-id="Search-input"]')
+      .should('exist')
+      .type('Tomate')
+
+    cy.get('[data-test-id="Recipe-card-toggle"]')
+      .should('exist')
+      .click({ multiple: true })
+
+    cy.get('[data-test-id="Recipe-card-toggled-content"]').contains('Tomate')
+  })
+
+  it('only renders something when the input value is found', () => {
+    cy.get('[data-test-id="Search-input"]')
+      .should('exist')
+      .type('bdfbd')
+
+    cy.get('[data-test-id="Search-result"]').should('not.exist')
+  })
 })
 
 describe('single recipe page', () => {

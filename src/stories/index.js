@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import RecipeCard from '../components/RecipeCard'
 import Recipe from '../components/Recipe'
 import Heart from '../components/Heart'
+import SearchInput from 'react-search-input'
 import FridgeContent from '../components/FridgeContent'
 
 storiesOf('RecipeCard', module).add(
@@ -78,6 +79,15 @@ storiesOf('Heart', module)
       likedRecipes={[12]}
     />
   ))
+
+storiesOf('Search Field', module)
+  .add('Search Field with nothing entered yet', () => (
+    <SearchInput placeholder="Rezept suchen" />
+  ))
+  .add('Search Field with something entered', () => (
+    <SearchInput value="Käse" />
+  ))
+
 storiesOf('Fridge', module)
   .add('Fridge with no items added', () => <FridgeContent fridgeContent={[]} />)
   .add('Fridge with some items added', () => (

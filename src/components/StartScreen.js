@@ -11,10 +11,9 @@ const KEYS_TO_FILTERS = [
   'Minuten',
   'Zutaten',
   'Zubereitung',
-  'dest.name',
 ]
 
-export default class SearchScreen extends Component {
+export default class StartScreen extends Component {
   state = {
     searchTerm: '',
   }
@@ -27,12 +26,19 @@ export default class SearchScreen extends Component {
     return (
       <div>
         <SearchInput
+          data-test-id="Search-input"
           className="search-input"
           onChange={this.searchUpdated}
           placeholder="Rezept suchen"
         />
         {filteredRecipes.map(recipe => {
-          return <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
+          return (
+            <RecipeCardContainer
+              data-test-id="Search-result"
+              key={recipe.RezeptID}
+              recipe={recipe}
+            />
+          )
         })}
         <Link data-test-id="Link-to-fridge" to="/fridge">
           Go to fridge
