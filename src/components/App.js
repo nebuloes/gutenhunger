@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import StartScreen from '../components/StartScreen'
 import RecipeContainer from '../containers/RecipeContainer'
+import LikedRecipesContainer from '../containers/LikedRecipesContainer'
 import FridgeContentContainer from '../containers/FridgeContentContainer'
 
 const store = createStore(
@@ -30,6 +31,7 @@ class App extends Component {
           <div className="App">
             <Route exact path="/" component={StartScreen} />
             <Route path="/recipe/:id" render={this.renderRecipe} />
+            <Route path="/likes" component={LikedRecipesContainer} />
             <Route path="/fridge" component={FridgeContentContainer} />
           </div>
         </Router>
