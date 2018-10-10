@@ -10,13 +10,19 @@ export default class LikedRecipes extends Component {
   }
 
   render() {
-    return recipes.map(
-      recipe =>
-        this.props.likedRecipes.includes(recipe.RezeptID) ? (
-          <RecipeCardContainer recipe={recipe} />
-        ) : (
-          <div />
-        )
-    )
+    return recipes.map(recipe => {
+      if (this.props.likedRecipes.includes(recipe.RezeptID)) {
+        return <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
+      } else {
+        return null
+      }
+    })
   }
 }
+
+// return recipes.map(
+//   recipe =>
+//     this.props.likedRecipes.includes(recipe.RezeptID) ? (
+//       <RecipeCardContainer key={recipe.RezeptID} recipe={recipe} />
+//     ) : null
+// )

@@ -147,3 +147,33 @@ describe('fridge page', () => {
     cy.get('[data-test-id="Fridge-item"]').should('contain', 'Camembert')
   })
 })
+
+describe('liked recipes page', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+    cy.get('[data-test-id="Recipe-card-toggle"]')
+      .should('exist')
+      .click({ multiple: true })
+
+    cy.get('[data-test-id="Recipe-not-saved"]')
+      .should('exist')
+      .click({ multiple: true })
+    cy.get('[data-test-id="Recipe-saved"]').should('exist')
+    cy.get('[data-test-id="Link-to-likes"]')
+      .should('exist')
+      .click()
+
+    cy.url().should('eq', 'http://localhost:3000/likes')
+  })
+
+  it('removes recipe on click on heart', () => {
+    cy.get('[data-test-id="Recipe-card-toggle"]')
+      .should('exist')
+      .click({ multiple: true })
+    cy.get('[data-test-id="Recipe-card-toggled-content"]').should('exist')
+    cy.get('[data-test-id="Recipe-saved"]')
+      .should('exist')
+      .click({ multiple: true })
+    cy.get('[data-test-id="Recipe-saved"]').should('not.exist')
+  })
+})
