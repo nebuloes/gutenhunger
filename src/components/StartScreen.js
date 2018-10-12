@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import SearchInput, { createFilter } from 'react-search-input'
 
@@ -50,13 +49,6 @@ export default class StartScreen extends Component {
             />
           )
         })}
-        <Link data-test-id="Link-to-fridge" to="/fridge">
-          Go to fridge
-        </Link>
-        <br />
-        <Link data-test-id="Link-to-likes" to="/likes">
-          Go to likes
-        </Link>
       </div>
     )
   }

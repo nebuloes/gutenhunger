@@ -13,6 +13,11 @@ import LikedRecipesContainer from '../containers/LikedRecipesContainer'
 import FridgeContentContainer from '../containers/FridgeContentContainer'
 import Navbar from './Navbar'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faReceipt, faSearch, faHeart } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faReceipt, faSearch, faHeart)
+
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

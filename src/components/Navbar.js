@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const StyledNavbar = styled.div`
   position: absolute;
@@ -12,6 +13,8 @@ const StyledNavbar = styled.div`
   display: flex;
   background: rgb(210, 140, 55);
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 `
 
 export default class Navbar extends Component {
@@ -19,15 +22,15 @@ export default class Navbar extends Component {
     return (
       <StyledNavbar>
         <Link data-test-id="Link-to-index" to="/">
-          Go to index
+          <FontAwesomeIcon icon="search" />
         </Link>
         <br />
         <Link data-test-id="Link-to-fridge" to="/fridge">
-          Go to fridge
+          <FontAwesomeIcon icon="receipt" />
         </Link>
         <br />
         <Link data-test-id="Link-to-likes" to="/likes">
-          Go to likes
+          <FontAwesomeIcon icon="heart" />
         </Link>
       </StyledNavbar>
     )

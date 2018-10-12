@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 import { recipes } from '../recipes.json'
 import RecipeCardContainer from '../containers/RecipeCardContainer'
@@ -20,14 +19,6 @@ export default class LikedRecipes extends Component {
             return null
           }
         })}
-        <Link data-test-id="Link-to-index" to="/">
-          Go to index
-        </Link>
-        <br />
-        <Link data-test-id="Link-to-fridge" to="/fridge">
-          Go to fridge
-        </Link>
-        <br />
       </React.Fragment>
     )
   }
