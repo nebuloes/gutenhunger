@@ -35,7 +35,11 @@ export default class Recipe extends Component {
           ))}
         </ul>
         <small>1 Portion</small>
-        <div>{recipe.Zubereitung}</div>
+        <div>
+          {recipe.Zubereitung.map((task, i) => (
+            <p key={i}>{task}</p>
+          ))}
+        </div>
       </div>
     )
   }

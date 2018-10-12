@@ -1,20 +1,299 @@
 {
   "recipes": [
     {
-      "RezeptID": 17,
-      "RezeptName": "Rezept 1",
-      "SchwierigkeitsgradName": "normal",
-      "Minuten": 60,
-      "Zutaten": "250g Nudeln, 1 Ei(er)",
-      "Zubereitung": "1. Tu dies 2. Tu das"
+      "RezeptID": 1,
+      "RezeptName": "Apfelkuchen",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 40,
+      "Zutaten": "750 g Äpfel, 125 g weiche Butter oder Margarine, 100 g Zucker, 1 Pck. Vanillin-Zucker, 1 Pr. Salz, ½ Rö. Natürliches Zitronen-Aroma, 3 Eier (Größe M), 200 g Weizenmehl, 2 gestr. TL Backpulver, 2 EL Milch, Puderzucker",
+      "Zubereitung": [
+        "Boden der Springform fetten. Für den Belag Äpfel schälen, vierteln und mehrmals der Länge nach einritzen. Backofen vorheizen.",
+        "Ober-/Unterhitze: etwa 180°C",
+        "Heißluft: etwa 160°C",
+        "Butter oder Margarine in einer Rührschüssel mit einem Mixer (Rührstäbe) geschmeidig rühren. Nach und nach Zucker, Vanillin-Zucker, Salz und Aroma unter Rühren hinzufügen, bis eine gebundene Masse entsteht. Jedes Ei etwa ½ Min. auf höchster Stufe unterrühren. Mehl und Backin mischen und abwechselnd mit der Milch in 2 Portionen kurz auf mittlerer Stufe unterrühren. Teig in die Springform füllen und glatt streichen. Die Apfelviertel kranzförmig auf den Teig legen. Die Form auf dem Rost in den Backofen schieben.",
+        "Einschub: unteres Drittel",
+        "Backzeit: etwa 45 Min.",
+        "Springformrand lösen und entfernen. Kuchen vom Springformboden lösen, aber darauf auf einem Kuchenrost erkalten lassen.",
+        "Vor dem Servieren den Apfelkuchen mit Puderzucker bestreuen."
+      ],
+      "Tags": "vegetarisch, süß"
     },
     {
       "RezeptID": 2,
-      "RezeptName": "Rezept 2",
+      "RezeptName": "Bratkartoffeln",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "3 m.-große Kartoffel(n), 50 ml Wasser, 2 EL Öl, Salz",
+      "Zubereitung": [
+        "Kartoffeln schälen und in mind. 5 mm dicke Scheiben schneiden. Wasser in eine Pfanne geben und die Scheiben darauf verteilen. Nun solange auf höchster Stufe einköcheln lassen, bis das Wasser nicht mehr zu sehen ist.",
+        "Öl auf die Kartoffeln geben und bei mittlerer Hitze braten.",
+        "Eine Scheibe probieren und wenn sie fast gar ist, die Hitze hochstellen und braten, bis die Kartoffeln eine schöne Farbe bekommen. Danach salzen und sofort servieren."
+      ],
+      "Tags": "herzhaft, vegetarisch, vegan"
+    },
+    {
+      "RezeptID": 3,
+      "RezeptName": "Couscous-Salat",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 25,
+      "Zutaten": "250g Instant-Couscous, 1/4 Salatgurke, 1 Tomate, ½ rote Paprika, 2 Stangen Frühlingszwiebeln, 1 Zitrone, 3 EL Olivenöl, Salz, Pfeffer, frische Petersilie",
+      "Zubereitung": [
+        "250 ml gesalzenes Wasser in einem kleinen Topf zum Kochen bringen. Sobald das Wasser sprudelnd kocht, Topf von der Herdplatte nehmen und direkt das Instant-Couscous einrühren. Beiseite stellen und mindestens 5 Minuten quellen lassen.",
+        "Gurke und Zwiebel schälen, Tomate waschen und Paprika putzen (Kerne entfernen und waschen). Alles in kleine Würfel schneiden und vermischen. Salz über das gewürfelte Gemüse streuen.",
+        "Die Zitrone auspressen und die Petersilie waschen und klein hacken.",
+        "Zitronensaft mit 2 Esslöffel Olivenöl, Salz und Pfeffer verrühren.",
+        "Einen Esslöffel Olivenöl über das fertig aufgequollene Couscous geben und kräftig mit einer Gabel durchrühren, so dass die Körner nicht zusammenkleben und schön locker werden.",
+        "Jetzt das Couscous mit dem gewürfelten Gemüse vermischen, das Zitronensaft-Öl-Dressing dazugeben und die gehackte Petersilie darüber streuen. Alles kräftig durchmischen und fertig!"
+      ],
+      "Tags": "vegetarisch, vegan"
+    },
+    {
+      "RezeptID": 4,
+      "RezeptName": "Dattelcreme",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 15,
+      "Zutaten": "125 g Soft-Datteln ohne Stein, 1 Zehe/n Knoblauch, 200 g Frischkäse, 200 g Schmand, 1 TL Harissapaste, ½ TL Salz, 3 Prisen Pfeffer, ½ TL Currypulver, ½ TL Kreuzkümmelpulver",
+      "Zubereitung": [
+        "Die Datteln mit den Gewürzen und dem Knoblauch in den Mixer geben und alles sehr klein hacken. Wer keinen Mixer hat, kann auch einen Stabmixer nehmen.",
+        "Schmand, Frischkäse und die Harissapaste dazugeben und alles weiter mixen. Wenn die Creme zu dünnflüssig ist, kann man einfach etwas mehr Frischkäse als Schmand dazugeben.",
+        "Am besten passt die Creme als Dip zu Fleisch, Brot oder Gemüse. Der Hit bei jedem Grillabend!"
+      ],
+      "Tags": "pikant, orientalisch, vegetarisch"
+    },
+    {
+      "RezeptID": 5,
+      "RezeptName": "Erbsensuppe mit Minzeschmand",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 50,
+      "Zutaten": "800 g Erbsen, 25 g Butter, 1 Schalotte(n), 1 EL Honig, 1 Stange/n Lauch, 150 ml Weißwein, 250 ml Brühe, 200 g süße Sahne, 1 Prise Salz, 1 Prise Pfeffer, 1 Prise Muskat, 100g Schmand, 3 Stiele Minze, Zitronenschale, ½ Bund Schnittlauch",
+      "Zubereitung": [
+        "Die fein geschnittene Schalotte in der Butter anschwitzen und mit dem Bienenhonig etwas karamellisieren lassen. Mit Weißwein ablöschen und die Erbsen, den Lauch und die Brühe dazugeben. Die Suppe ca. 30 Min. kochen.",
+        "Für jeden Teller 2 EL Erbsen entnehmen und warm halten (Garnitur). ",
+        "In der Zwischenzeit etwas Zitronenschale abreiben, den Schnittlauch in feine Röllchen schneiden, die Minze waschen und gut trocknen.",
+        "Die Minzeblätter mit dem Schmand pürieren (Pürierstab), mit Salz und Zitronenabrieb abschmecken. ",
+        "Die Suppe pürieren (sie wird besonders zart, wenn man sie anschließend noch durch ein ganz feines Sieb streicht). Die Suppe wieder in einen Topf geben, mit Sahne auffüllen und heiß werden lassen. Mit Salz, Pfeffer und Muskat abschmecken.",
+        "Je 2 EL der zurück gelegten ganzen Erbsen in die Teller geben und einen guten Schlag vom Minzeschmand in die Tellermitte setzen. Mit Suppe auffüllen und mit Schnittlauchröllchen garnieren."
+      ],
+      "Tags": "herzhaft, vegetarisch"
+    },
+    {
+      "RezeptID": 6,
+      "RezeptName": "FuFu",
+      "SchwierigkeitsgradName": "normal",
+      "Minuten": 50,
+      "Zutaten": "1 kg Rinndfleisch, 1 Glas Erdnusscreme, 1 große Zwiebel, 4 große Tomaten, Chilis (nach Bedarf), 1 Brühwürfel, ½ EL Salz, 1½ Liter Wasser, 1 Prise FuFu-Pulver",
+      "Zubereitung": [
+        "Wasser in einen Topf füllen, das Glas Erdnusscreme dazu geben. Auf kleiner Flamme ca. 10 Min. lang zu einer Creme verrühren.",
+        "Die Zwiebeln würfeln, mit dem Rindfleisch in einen großen Topf mit etwas Öl geben, die 4 ganzen Tomaten dazu, rundherum leicht anbraten.",
+        "Ca. 1/2 Liter Wasser hinzufügen, dass das Fleisch bis zur Hälfte bedeckt ist. 1/2 Esslöffel Salz hinzufügen. Weiter schmoren, bis sich die Haut von den Tomaten gelöst hat.",
+        "Die Tomaten herausnehmen, mit einem Schuss Wasser pürieren (für etwas Schärfe 1 Chili mitpürieren).",
+        "Pürierte Tomaten/ Chili zurück in den Fleischtopf. Den Brühwürfel dazu geben, ca. 5 Min. verrühren.",
+        "Die Erdnusscreme dazu, alles zusammen 20 Minuten köcheln.",
+        "Fufu-Pulver mit Wasser anrühren (nach Packungsanleitung)."
+      ],
+      "Tags": "herzhaft, afrikanisch"
+    },
+    {
+      "RezeptID": 7,
+      "RezeptName": "Gulaschsuppe",
+      "SchwierigkeitsgradName": "anspruchsvoll",
+      "Minuten": 130,
+      "Zutaten": "700 g Rindfleisch, 700 g Zwiebeln, 3 Zehe/n Knoblauch, 2 EL Paprikapulver, 1 TL Kümmel, 1 TL Majoran, 1 TL Salz, 400 g Tomaten aus der Dose, 2 Paprikaschote/n, 1 Möhre/n, 500 g Kartoffeln, 450 ml Rinderbrühe, 800 ml Rinderfond, 150 g saure Sahne, 1 kl. Glas Rotwein, 2 Lorbeerblätter, Butterschmalz",
+      "Zubereitung": [
+        "Zwiebeln fein würfeln, Rindfleisch in 1 x 1 cm kleine Stücke schneiden, Kümmel im Mörser zerstoßen, Paprika in Streifen schneiden, Knoblauch fein hacken. Kartoffeln und Möhren schälen und würfeln, etwas kleiner als das Fleisch.",
+        "In einem Bratentopf die Zwiebelwürfel im Butterschmalz goldbraun braten, die Fleischwürfel hinzugeben und bei starker Hitze 5 Minuten anrösten. Tomatenmark zufügen und ebenfalls ca. 1 Minute anrösten, aber nicht anbrennen lassen. Paprikapulver, Salz, Majoran und Kümmel einstreuen und unter Rühren eine weitere Minute rösten. Mit Rotwein ablöschen und diesen fast vollständig einkochen lassen.",
+        "Tomaten, Brühe, Fond, Knoblauch, Paprikastreifen, Möhren und Lorbeerblätter in den Topf geben. Die Gulaschsuppe bei kleiner Hitze ca. 1 Std. köcheln lassen. Danach die Kartoffeln dazugeben und weitere 25 Minuten, evtl. etwas mehr, köcheln lassen. ",
+        "Saure Sahne mit etwas Suppe verrühren, zurück zur Suppe geben, unterrühren und die Suppe heiß servieren."
+      ],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 8,
+      "RezeptName": "Hummus bi Tahina",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "1 Dose Kichererbsen, 2 EL Sesampaste (Tahina), Zitronensaft, 4 Knoblauchzehe/n, 1 Bund Petersilie, Öl, 2 EL Kreuzkümmelpulver, 1 Chilischote/n, 1 EL Currypulver, Salz, Pfeffer",
+      "Zubereitung": [
+        "Zunächst die Kichererbsen abseihen und die Flüssigkeit auffangen.",
+        "Die Kichererbsen mit der Tahina, dem Knoblauch, etwas Zitronensaft (nicht alles auf einmal, besser nachwürzen), der Chilischote, dem Curry, etwas Salz und 2 EL Cumin in den Mixer geben. Zunächst ein Glas der aufgefangenen Kichererbsenflüssigkeit und 3 - 4 EL Öl dazugeben und mixen.",
+        "Wenn die Konsistenz zu dick ist, peu à peu ein wenig mehr von der Kichererbsenflüssigkeit dazugeben, bis eine cremige Konsistenz erreicht ist. Mit weißem Pfeffer, Salz, Cumin und Zitronensaft abschmecken.",
+        "Mit Klarsichtfolie abdecken und mindestens 2 Stunden ruhen lassen.",
+        "Auf eine tiefe Platte gießen und mit Petersilie dekorieren. Wenn man will, kann man vor dem Servieren noch etwas Rosenpaprika mit Öl vermischen und das darüber träufeln.",
+        "Mit frisch aufgebackenem Fladenbrot genießen!"
+      ],
+      "Tags": "vegetarisch, vegan"
+    },
+    {
+      "RezeptID": 9,
+      "RezeptName": "Indisches Curry",
+      "SchwierigkeitsgradName": "normal",
+      "Minuten": 50,
+      "Zutaten": "200 g Hähnchenbrustfilet, 200 g Tomaten, 1 Zwiebel/n, 4 Zehe/n Knoblauch, 100 ml Kokosmilch, Korianderpulver, Currypulver, geraspelte Chilischoten, Kurkuma, Salz, Pfeffer, Kreuzkümmel, Öl, etwas Wasser",
+      "Zubereitung": [
+        "Zwiebeln in Würfelchen schneiden, Tomaten blanchieren und schälen, Gewürze, Kokosmilch etc. bereitstellen. In einem großen Topf Öl erhitzen, Zwiebeln hinzugeben und leicht anbräunen, Knoblauchzehen dazu pressen.",
+        "Fleisch dazugeben und scharf anbraten. Nach Gefühl etwas heißes Wasser dazugießen, die Tomaten dazugeben und ca. 30 Minuten auf kleiner Stufe köcheln lassen, bis die Tomaten verkocht sind. Korianderpulver dazugeben (wenig erstmal).",
+        "Currypulver (pro 200 g Fleisch ca. 1 EL), Salz, Pfeffer, Kurkuma, nach Geschmack etwas Chili einrühren und den Kreuzkümmel grob zerkleinern und auch dazugeben. Nachdem die Gewürze etwas eingekocht sind, Kokosmilch nach Bedarf unterrühren. Ggf. nach Geschmack etwas nachwürzen.",
+        "Dazu Basmatireis und Chutneys mit Joghurt."
+      ],
+      "Tags": "indisch"
+    },
+    {
+      "RezeptID": 10,
+      "RezeptName": "Jakobsmuscheln",
       "SchwierigkeitsgradName": "leicht",
       "Minuten": 20,
       "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
-      "Zubereitung": "1. Tu dies 2. Tu das 3. Tu jenes"
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 11,
+      "RezeptName": "Kürbissuppe",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "vegetarisch, vegan"
+    },
+    {
+      "RezeptID": 12,
+      "RezeptName": "Lahmacun",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft, orientalisch"
+    },
+    {
+      "RezeptID": 13,
+      "RezeptName": "Melonensalat mit Feta",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "vegetarisch"
+    },
+    {
+      "RezeptID": 14,
+      "RezeptName": "Nasi Goreng",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 15,
+      "RezeptName": "Ofenkartoffeln",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 16,
+      "RezeptName": "Pfannkuchen",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 17,
+      "RezeptName": "Quinoa",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 18,
+      "RezeptName": "Ratatouille",
+      "SchwierigkeitsgradName": "normal",
+      "Minuten": 30,
+      "Zutaten": "250 g Zucchini, 1 kleine Aubergine, 400 g Tomaten, 2 kleine Zwiebeln, 1 rote Paprikaschote, 1 gelbe Paprikaschote, 2 Knoblauchzehe/n, 2 Stiele Basilikum, 3 Stiele Thymian, 3 Stiele Oregano, 2 Zweige Rosmarin, 4 EL Olivenöl, 2 EL Tomatenmark, 150 ml Gemüsebrühe, Salz, Pfeffer",
+      "Zubereitung": [
+        "250 g Zucchini, 1 kleine Aubergine und 400 g Tomaten waschen, putzen und getrennt in Stücke schneiden. 1-2 Knoblauchzehen schälen und fein hacken. 2 kleine Zwiebeln schälen und in kleine Würfel schneiden. Je 1 rote und gelbe Paprika halbieren, putzen, waschen und in Stücke schneiden.",
+        "Kräuter waschen und trocken schütteln. Von einem Zweig Rosmarin die Nadeln abstreifen und fein hacken. Anschließend Blätter von 2 Stielen Basilikum, 3 Stielen Thymian und 3 Stielen Oregano abzupfen und, bis auf einige zum Garnieren, grob hacken.",
+        "4 EL Öl in einer Pfanne erhitzen. Zwiebel- und Paprikawürfel darin 4–5 Minuten andünsten. Knoblauch, übriges Gemüse, 2 EL Tomatenmark und gehackte Kräuter einrühren und kurz andünsten. 100-150 ml Gemüsebrühe nach und nach bei Bedarf zugießen, mit Salz und Pfeffer würzen. Das Gemüse für ca. 15 Minuten bei mittlerer Hitze garen.",
+        "Gebratenes Gemüse auf Tellern anrichten und mit übrigen Kräutern garnieren."
+      ],
+      "Tags": "herzhaft, vegetarisch, vegan"
+    },
+    {
+      "RezeptID": 19,
+      "RezeptName": "Spaghetti Carbonara",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 20,
+      "RezeptName": "Tiramisu",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "vegetarisch"
+    },
+    {
+      "RezeptID": 21,
+      "RezeptName": "Ungarisches Letscho",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 22,
+      "RezeptName": "Vitello Tonnato",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 23,
+      "RezeptName": "Waffeln",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 24,
+      "RezeptName": "XuXu Erdbeerlikör",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 25,
+      "RezeptName": "Yam Wun Sen",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
+    },
+    {
+      "RezeptID": 26,
+      "RezeptName": "Zwiebelsuppe",
+      "SchwierigkeitsgradName": "leicht",
+      "Minuten": 20,
+      "Zutaten": "2 Tomaten, 1 Bund Petersilie, Salz",
+      "Zubereitung": ["1. Tu dies 2. Tu das 3. Tu jenes"],
+      "Tags": "herzhaft"
     }
   ]
 }

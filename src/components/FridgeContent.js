@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import FridgeItem from './FridgeItem'
 
@@ -53,6 +54,13 @@ export default class FridgeContent extends Component {
             />
           ))}
         </ul>
+        <Link data-test-id="Link-to-index" to="/">
+          Go to index
+        </Link>
+        <br />
+        <Link data-test-id="Link-to-likes" to="/likes">
+          Go to likes
+        </Link>
       </div>
     )
   }
