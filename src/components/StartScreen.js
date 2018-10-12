@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 import SearchInput, { createFilter } from 'react-search-input'
 
 import { recipes } from '../recipes.json'
 import RecipeCardContainer from '../containers/RecipeCardContainer'
+
+const StyledSection = styled.section`
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+`
 
 const KEYS_TO_FILTERS = [
   'RezeptName',
@@ -25,12 +33,14 @@ export default class StartScreen extends Component {
 
     return (
       <div>
-        <SearchInput
-          data-test-id="Search-input"
-          className="search-input"
-          onChange={this.searchUpdated}
-          placeholder="Rezept suchen"
-        />
+        <StyledSection>
+          <SearchInput
+            data-test-id="Search-input"
+            className="search-input"
+            onChange={this.searchUpdated}
+            placeholder="Rezept suchen"
+          />
+        </StyledSection>
         {filteredRecipes.map(recipe => {
           return (
             <RecipeCardContainer

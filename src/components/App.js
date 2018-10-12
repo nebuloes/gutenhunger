@@ -4,12 +4,14 @@ import reducer from '../reducer'
 import { saveToLocalStorage } from '../middlewares'
 import { recipes } from '../recipes.json'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import '../App.css'
 import StartScreen from '../components/StartScreen'
 import RecipeContainer from '../containers/RecipeContainer'
 import LikedRecipesContainer from '../containers/LikedRecipesContainer'
 import FridgeContentContainer from '../containers/FridgeContentContainer'
+import Navbar from './Navbar'
 
 const store = createStore(
   reducer,
@@ -21,22 +23,7 @@ class App extends Component {
   renderRecipe = ({ match }) => {
     const recipeID = Number(match.params.id)
     const foundRecipe = recipes.find(recipe => recipe.RezeptID === recipeID)
-    return (
-      <React.Fragment>
-        <RecipeContainer recipe={foundRecipe} />
-        <Link data-test-id="Link-to-index" to="/">
-          Go to index
-        </Link>
-        <br />
-        <Link data-test-id="Link-to-fridge" to="/fridge">
-          Go to fridge
-        </Link>
-        <br />
-        <Link data-test-id="Link-to-likes" to="/likes">
-          Go to likes
-        </Link>
-      </React.Fragment>
-    )
+    return <RecipeContainer recipe={foundRecipe} />
   }
 
   render() {
@@ -48,6 +35,7 @@ class App extends Component {
             <Route path="/recipe/:id" render={this.renderRecipe} />
             <Route path="/likes" component={LikedRecipesContainer} />
             <Route path="/fridge" component={FridgeContentContainer} />
+            <Navbar />
           </div>
         </Router>
       </Provider>

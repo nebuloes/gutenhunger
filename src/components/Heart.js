@@ -21,7 +21,7 @@ export default class Heart extends Component {
         data-test-id="Recipe-saved"
         src={heartFilled}
         alt=""
-        width="30px"
+        width="15px"
         onClick={onUnsave}
       />
     ) : (
@@ -29,7 +29,7 @@ export default class Heart extends Component {
         data-test-id="Recipe-not-saved"
         src={heart}
         alt=""
-        width="30px"
+        width="15px"
         onClick={onSave}
       />
     )

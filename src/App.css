@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+
+.App {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(80, 78, 70);
+}
+
+.search-input {
+  border: 1pt solid grey;
+}

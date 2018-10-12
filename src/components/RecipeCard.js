@@ -8,6 +8,16 @@ import Heart from './Heart'
 
 const StyledH1 = styled.h1`
   display: inline;
+  font-size: 16pt;
+  color: rgb(80, 78, 70);
+`
+const StyledH2 = styled.h2`
+  font-size: 8pt;
+  font-weight: 600;
+  color: rgba(80, 78, 70, 0.8);
+`
+const StyledLink = styled.section`
+  color: rgb(210, 140, 55);
 `
 const StyledImg = styled.img`
   transform: rotate(90deg);
@@ -53,7 +63,7 @@ export default class Recipe extends Component {
           onClick={this.toggleContent}
         />
         <section data-test-id="Recipe-card-toggled-content">
-          <h2>
+          <StyledH2>
             {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
             <Heart
               recipe={recipe}
@@ -61,14 +71,16 @@ export default class Recipe extends Component {
               onUnsave={() => onUnsave(recipeIndex)}
               likedRecipes={likedRecipes}
             />
-          </h2>
+          </StyledH2>
           <h3>Zutaten</h3>
           <ul>
             {recipe.Zutaten.split(',').map((zutat, i) => (
               <li key={i}>{zutat}</li>
             ))}
           </ul>
-          <Link to={'/recipe/' + recipe.RezeptID}>zum Rezept</Link>
+          <Link to={'/recipe/' + recipe.RezeptID}>
+            <StyledLink>zum Rezept</StyledLink>
+          </Link>
         </section>
       </React.Fragment>
     )
