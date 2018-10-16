@@ -15,6 +15,7 @@ const StyledNavbar = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  z-index: 20;
 `
 
 export default class Navbar extends Component {

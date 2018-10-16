@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import FridgeItem from './FridgeItem'
+
+const StyledInput = styled.input`
+  width: 200px;
+  border: 1pt solid grey;
+  border-radius: 7px;
+  padding: 5px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+`
 
 export default class FridgeContent extends Component {
   static propTypes = {
@@ -34,15 +44,17 @@ export default class FridgeContent extends Component {
     const { fridgeContent, onEdit, onDelete } = this.props
     return (
       <div>
-        <input
-          data-test-id="Fridge-input"
-          onChange={this.updateInputValue}
-          onKeyUp={this.checkForEnterButton}
-          placeholder="Enter Item"
-          autoFocus
-          value={this.state.inputValue}
-          type="text"
-        />
+        <center>
+          <StyledInput
+            data-test-id="Fridge-input"
+            onChange={this.updateInputValue}
+            onKeyUp={this.checkForEnterButton}
+            placeholder="Was ist in deinem Kühlschrank?"
+            autoFocus
+            value={this.state.inputValue}
+            type="text"
+          />
+        </center>
         <ul>
           {fridgeContent.map((item, index) => (
             <FridgeItem

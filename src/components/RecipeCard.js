@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Link } from 'react-router-dom'
-import arrow from '../arrow.png'
 import Heart from './Heart'
 
 const StyledH1 = styled.h1`
@@ -19,8 +19,37 @@ const StyledH2 = styled.h2`
 const StyledLink = styled.section`
   color: rgb(210, 140, 55);
 `
-const StyledImg = styled.img`
-  transform: rotate(90deg);
+
+const StyledRecipeCard = styled.section`
+  position: relative;
+  margin-bottom: 20px;
+`
+
+const StyledArrowSection = styled.section`
+  color: rgb(210, 140, 55);
+  position: absolute;
+  top: -5px;
+  right: 0;
+  z-index: 2;
+  font-size: 18pt;
+`
+
+const StyledHeartSection = styled.section`
+  position: absolute;
+  right: 40px;
+  top: 50px;
+`
+
+const StyledLinkSection = styled.section`
+  color: rgb(210, 140, 55);
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  z-index: 2;
+`
+
+const DistanceSection = styled.section`
+  height: 20px;
 `
 
 export default class Recipe extends Component {
@@ -46,31 +75,33 @@ export default class Recipe extends Component {
     const RezeptID = recipe.RezeptID
     const recipeIndex = likedRecipes.findIndex(recipe => recipe === RezeptID)
     return this.state.hidden ? (
-      <img
-        data-test-id="Recipe-card-toggle"
-        src={arrow}
-        alt=""
-        width="30px"
-        onClick={this.toggleContent}
-      />
-    ) : (
-      <React.Fragment>
-        <StyledImg
+      <StyledArrowSection>
+        <FontAwesomeIcon
           data-test-id="Recipe-card-toggle"
-          src={arrow}
-          alt=""
-          width="30px"
+          icon="chevron-circle-right"
           onClick={this.toggleContent}
         />
+      </StyledArrowSection>
+    ) : (
+      <React.Fragment>
+        <StyledArrowSection>
+          <FontAwesomeIcon
+            data-test-id="Recipe-card-toggle"
+            icon="chevron-circle-down"
+            onClick={this.toggleContent}
+          />
+        </StyledArrowSection>
         <section data-test-id="Recipe-card-toggled-content">
-          <StyledH2>
-            {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
+          <StyledHeartSection>
             <Heart
               recipe={recipe}
               onSave={() => onSave(RezeptID)}
               onUnsave={() => onUnsave(recipeIndex)}
               likedRecipes={likedRecipes}
             />
+          </StyledHeartSection>
+          <StyledH2>
+            {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
           </StyledH2>
           <h3>Zutaten</h3>
           <ul>
@@ -78,9 +109,12 @@ export default class Recipe extends Component {
               <li key={i}>{zutat}</li>
             ))}
           </ul>
-          <Link to={'/recipe/' + recipe.RezeptID}>
-            <StyledLink>zum Rezept</StyledLink>
-          </Link>
+          <DistanceSection />
+          <StyledLinkSection>
+            <Link to={'/recipe/' + recipe.RezeptID}>
+              <StyledLink>zum Rezept</StyledLink>
+            </Link>
+          </StyledLinkSection>
         </section>
       </React.Fragment>
     )
@@ -89,12 +123,12 @@ export default class Recipe extends Component {
   render() {
     const { recipe } = this.props
     return (
-      <div data-test-id="Recipe-card">
+      <StyledRecipeCard data-test-id="Recipe-card">
         <Link to={'/recipe/' + recipe.RezeptID}>
           <StyledH1>{recipe.RezeptName}</StyledH1>
         </Link>
         {this.renderShortOrLongRecipeCard()}
-      </div>
+      </StyledRecipeCard>
     )
   }
 }

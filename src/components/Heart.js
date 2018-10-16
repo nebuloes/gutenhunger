@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import heart from '../heart.png'
-import heartFilled from '../heart-fill.png'
+const HeartSection = styled.section`
+  font-size: 30pt;
+  color: rgb(210, 140, 55);
+`
 
 export default class Heart extends Component {
   static propTypes = {
@@ -17,25 +21,13 @@ export default class Heart extends Component {
     const { onSave, onUnsave, likedRecipes, recipe } = this.props
     const foundRecipe = likedRecipes.includes(recipe.RezeptID)
     return foundRecipe ? (
-      <img
-        data-test-id="Recipe-saved"
-        src={heartFilled}
-        alt=""
-        width="15px"
-        onClick={onUnsave}
-      />
+      <FontAwesomeIcon icon="heart" onClick={onUnsave} />
     ) : (
-      <img
-        data-test-id="Recipe-not-saved"
-        src={heart}
-        alt=""
-        width="15px"
-        onClick={onSave}
-      />
+      <i className="far fa-heart" onClick={onSave} />
     )
   }
 
   render() {
-    return <React.Fragment>{this.renderEmptyOrFullHeart()}</React.Fragment>
+    return <HeartSection>{this.renderEmptyOrFullHeart()}</HeartSection>
   }
 }

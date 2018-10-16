@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import Heart from './Heart'
+
+const StyledHeartSection = styled.section`
+  position: absolute;
+  right: 40px;
+  top: 45px;
+`
 
 export default class Recipe extends Component {
   static propTypes = {
@@ -16,15 +23,15 @@ export default class Recipe extends Component {
     const recipeIndex = likedRecipes.findIndex(recipe => recipe === RezeptID)
     return (
       <div data-test-id="Recipe-complete">
-        <h1>
-          {recipe.RezeptName}
+        <StyledHeartSection>
           <Heart
             recipe={recipe}
             onSave={() => onSave(RezeptID)}
             onUnsave={() => onUnsave(recipeIndex)}
             likedRecipes={likedRecipes}
           />
-        </h1>
+        </StyledHeartSection>
+        <h1>{recipe.RezeptName}</h1>
         <h2>
           {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten
         </h2>

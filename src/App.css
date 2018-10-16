@@ -4,6 +4,7 @@
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   padding: 30px;
+  color: rgb(80, 78, 70);
 }
 
 a {
@@ -13,4 +14,7 @@ a {
 
 .search-input {
   border: 1pt solid grey;
+  border-radius: 7px;
+  width: 150px;
+  padding-left: 10px;
 }

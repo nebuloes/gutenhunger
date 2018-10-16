@@ -37,7 +37,7 @@ export default class StartScreen extends Component {
             data-test-id="Search-input"
             className="search-input"
             onChange={this.searchUpdated}
-            placeholder="Rezept suchen"
+            placeholder="Rezept suchen..."
           />
         </StyledSection>
         {filteredRecipes.map(recipe => {

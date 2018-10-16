@@ -14,9 +14,21 @@ import FridgeContentContainer from '../containers/FridgeContentContainer'
 import Navbar from './Navbar'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faReceipt, faSearch, faHeart } from '@fortawesome/free-solid-svg-icons'
+import {
+  faReceipt,
+  faSearch,
+  faHeart,
+  faChevronCircleRight,
+  faChevronCircleDown,
+} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faReceipt, faSearch, faHeart)
+library.add(
+  faReceipt,
+  faSearch,
+  faHeart,
+  faChevronCircleRight,
+  faChevronCircleDown
+)
 
 const store = createStore(
   reducer,
