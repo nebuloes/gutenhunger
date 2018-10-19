@@ -4,6 +4,7 @@ import SearchInput, { createFilter } from 'react-search-input'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { recipes } from '../recipes.json'
+import RecipeCardContainer from '../containers/RecipeCardContainer'
 
 const StyledNavbar = styled.div`
   position: absolute;
@@ -21,6 +22,11 @@ const StyledNavbar = styled.div`
   z-index: 20;
   box-sizing: border-box;
   padding: 10px 30px 8px 30px;
+`
+
+const SearchResults = styled.div`
+  height: 100vh;
+  overflow: hidden;
 `
 
 const KEYS_TO_FILTERS = [
@@ -42,16 +48,31 @@ export default class Navbar extends Component {
     )
 
     return (
-      <StyledNavbar>
-        <FontAwesomeIcon icon="bars" />
-        <FontAwesomeIcon icon="search" />
-        <SearchInput
-          data-test-id="Search-input"
-          className="navbar-input"
-          onChange={this.searchUpdated}
-          placeholder="Rezept suchen..."
-        />
-      </StyledNavbar>
+      <React.Fragment>
+        <StyledNavbar>
+          <FontAwesomeIcon icon="bars" />
+          <FontAwesomeIcon icon="search" />
+          <SearchInput
+            data-test-id="Search-input"
+            className="navbar-input"
+            onChange={this.searchUpdated}
+            placeholder="Rezept suchen..."
+          />
+        </StyledNavbar>
+        {this.state.searchTerm === '' ? null : (
+          <SearchResults>
+            {filteredRecipes.map(recipe => {
+              return (
+                <RecipeCardContainer
+                  data-test-id="Search-result"
+                  key={recipe.RezeptID}
+                  recipe={recipe}
+                />
+              )
+            })}
+          </SearchResults>
+        )}
+      </React.Fragment>
     )
   }
 
