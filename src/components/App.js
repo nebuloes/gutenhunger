@@ -11,6 +11,7 @@ import StartScreen from '../components/StartScreen'
 import RecipeContainer from '../containers/RecipeContainer'
 import LikedRecipesContainer from '../containers/LikedRecipesContainer'
 import FridgeContentContainer from '../containers/FridgeContentContainer'
+import Header from './Header'
 import Navbar from './Navbar'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -20,6 +21,7 @@ import {
   faHeart,
   faChevronCircleRight,
   faChevronCircleDown,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -27,7 +29,8 @@ library.add(
   faSearch,
   faHeart,
   faChevronCircleRight,
-  faChevronCircleDown
+  faChevronCircleDown,
+  faBars
 )
 
 const store = createStore(
@@ -48,6 +51,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+            <Header />
             <Route exact path="/" component={StartScreen} />
             <Route path="/recipe/:id" render={this.renderRecipe} />
             <Route path="/likes" component={LikedRecipesContainer} />
