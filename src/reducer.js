@@ -4,6 +4,9 @@ import { load } from './services'
 const initialState = load('app') || {
   likedRecipes: [],
   fridgeContent: [],
+  ingredients: [],
+  username: 'Johanna',
+  age: '24',
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -21,6 +24,22 @@ export default function reducer(state = initialState, action = {}) {
         ...state.likedRecipes.slice(0, action.payload.recipeIndex),
 
         ...state.likedRecipes.slice(action.payload.recipeIndex + 1),
+      ],
+    }
+
+  case ACTIONS.ADD_INGREDIENTS:
+    return {
+      ...state,
+      ingredients: [...state.ingredients, action.payload.Zutaten],
+    }
+
+  case ACTIONS.REMOVE_INGREDIENTS:
+    return {
+      ...state,
+      ingredients: [
+        ...state.ingredients.slice(0, state.ingredients.length - 1),
+
+        ...state.ingredients.slice(state.ingredients.length),
       ],
     }
 
@@ -48,6 +67,18 @@ export default function reducer(state = initialState, action = {}) {
         action.payload.inputValue,
         ...state.fridgeContent.slice(action.payload.index + 1),
       ],
+    }
+
+  case ACTIONS.EDIT_USERNAME:
+    return {
+      ...state,
+      username: action.payload.inputValue,
+    }
+
+  case ACTIONS.EDIT_AGE:
+    return {
+      ...state,
+      age: action.payload.inputValue,
     }
 
   default:

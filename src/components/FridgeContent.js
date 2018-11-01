@@ -3,6 +3,14 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import FridgeItem from './FridgeItem'
+import RecipeCardContainer from '../containers/RecipeCardContainer'
+import { recipes } from '../recipes.json'
+
+const StyledH2 = styled.h2`
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 18pt;
+`
 
 const StyledInput = styled.input`
   width: 200px;
@@ -19,6 +27,7 @@ export default class FridgeContent extends Component {
     fridgeContent: PropTypes.array,
     onEdit: PropTypes.func,
     onDelete: PropTypes.func,
+    ingredients: PropTypes.array,
   }
 
   state = {
@@ -65,6 +74,18 @@ export default class FridgeContent extends Component {
             />
           ))}
         </ul>
+        <StyledH2>
+          <center>Rezeptvorschläge</center>
+        </StyledH2>
+        {recipes.map(recipe => {
+          return (
+            <RecipeCardContainer
+              data-test-id="Search-result"
+              key={recipe.RezeptID}
+              recipe={recipe}
+            />
+          )
+        })}
       </div>
     )
   }

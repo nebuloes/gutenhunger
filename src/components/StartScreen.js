@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import SearchInput, { createFilter } from 'react-search-input'
+import PropTypes from 'prop-types'
+import { createFilter } from 'react-search-input'
 
 import { recipes } from '../recipes.json'
 import RecipeCardContainer from '../containers/RecipeCardContainer'
@@ -10,6 +11,8 @@ const StyledSection = styled.section`
   justify-content: center;
   margin-top: 100px;
   margin-bottom: 100px;
+  font-size: 16pt;
+  font-weight: 600;
 `
 
 const KEYS_TO_FILTERS = [
@@ -21,6 +24,10 @@ const KEYS_TO_FILTERS = [
 ]
 
 export default class StartScreen extends Component {
+  static propTypes = {
+    username: PropTypes.string,
+  }
+
   state = {
     searchTerm: '',
   }
@@ -32,14 +39,7 @@ export default class StartScreen extends Component {
 
     return (
       <div>
-        <StyledSection>
-          <SearchInput
-            data-test-id="Search-input"
-            className="search-input"
-            onChange={this.searchUpdated}
-            placeholder="Rezept suchen..."
-          />
-        </StyledSection>
+        <StyledSection>Hallo {this.props.username}!</StyledSection>
         {filteredRecipes.map(recipe => {
           return (
             <RecipeCardContainer

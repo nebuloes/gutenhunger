@@ -15,6 +15,8 @@ const StyledH2 = styled.h2`
   font-size: 8pt;
   font-weight: 600;
   color: rgba(80, 78, 70, 0.8);
+  display: flex;
+  align-items: center;
 `
 const StyledLink = styled.section`
   color: rgb(210, 140, 55);
@@ -26,7 +28,7 @@ const StyledRecipeCard = styled.section`
 `
 
 const StyledArrowSection = styled.section`
-  color: rgb(210, 140, 55);
+  color: rgb(240, 180, 65);
   position: absolute;
   top: -5px;
   right: 0;
@@ -35,9 +37,8 @@ const StyledArrowSection = styled.section`
 `
 
 const StyledHeartSection = styled.section`
-  position: absolute;
-  right: 40px;
-  top: 50px;
+  font-size: 16pt;
+  margin-left: 15px;
 `
 
 const StyledLinkSection = styled.section`
@@ -57,6 +58,7 @@ export default class Recipe extends Component {
     recipe: PropTypes.object.isRequired,
     onSave: PropTypes.func,
     onUnsave: PropTypes.func,
+    onClick: PropTypes.func,
     likedRecipes: PropTypes.array,
   }
 
@@ -92,16 +94,16 @@ export default class Recipe extends Component {
           />
         </StyledArrowSection>
         <section data-test-id="Recipe-card-toggled-content">
-          <StyledHeartSection>
-            <Heart
-              recipe={recipe}
-              onSave={() => onSave(RezeptID)}
-              onUnsave={() => onUnsave(recipeIndex)}
-              likedRecipes={likedRecipes}
-            />
-          </StyledHeartSection>
           <StyledH2>
             {recipe.SchwierigkeitsgradName}, {recipe.Minuten} Minuten{' '}
+            <StyledHeartSection>
+              <Heart
+                recipe={recipe}
+                onSave={() => onSave(RezeptID)}
+                onUnsave={() => onUnsave(recipeIndex)}
+                likedRecipes={likedRecipes}
+              />
+            </StyledHeartSection>
           </StyledH2>
           <h3>Zutaten</h3>
           <ul>
@@ -112,7 +114,7 @@ export default class Recipe extends Component {
           <DistanceSection />
           <StyledLinkSection>
             <Link to={'/recipe/' + recipe.RezeptID}>
-              <StyledLink>zum Rezept</StyledLink>
+              <StyledLink onClick={this.props.onClick}>zum Rezept</StyledLink>
             </Link>
           </StyledLinkSection>
         </section>
@@ -125,7 +127,7 @@ export default class Recipe extends Component {
     return (
       <StyledRecipeCard data-test-id="Recipe-card">
         <Link to={'/recipe/' + recipe.RezeptID}>
-          <StyledH1>{recipe.RezeptName}</StyledH1>
+          <StyledH1 onClick={this.props.onClick}>{recipe.RezeptName}</StyledH1>
         </Link>
         {this.renderShortOrLongRecipeCard()}
       </StyledRecipeCard>

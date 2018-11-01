@@ -11,7 +11,7 @@ const StyledLi = styled.li`
 `
 
 const ButtonSection = styled.section`
-  color: rgb(210, 140, 55);
+  color: rgb(240, 180, 65);
   position: absolute;
   top: -5px;
   right: 0;

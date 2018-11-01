@@ -4,6 +4,7 @@ import FridgeContent from '../components/FridgeContent'
 
 const mapStateToProps = state => ({
   fridgeContent: state.fridgeContent,
+  ingredients: state.ingredients,
 })
 
 const mapDispatchToProps = dispatch => ({

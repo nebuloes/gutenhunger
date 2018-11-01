@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const HeartSection = styled.section`
-  font-size: 30pt;
-  color: rgb(210, 140, 55);
+  color: rgb(240, 180, 65);
 `
 
 export default class Heart extends Component {
